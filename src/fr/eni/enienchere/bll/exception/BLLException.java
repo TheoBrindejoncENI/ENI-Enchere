@@ -1,5 +1,9 @@
 package fr.eni.enienchere.bll.exception;
-
+/**
+ *
+ * @author ehourman2019
+ *
+ */
 @SuppressWarnings("serial")
 public class BLLException extends Exception{
 
