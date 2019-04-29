@@ -3,7 +3,11 @@ package fr.eni.enienchere.bo;
 import lombok.Data;
 
 import java.time.LocalDate;
-
+/**
+ *
+ * @author ehourman2019
+ *
+ */
 @Data
 public class Auction {
 
