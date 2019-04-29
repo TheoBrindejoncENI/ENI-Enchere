@@ -1,8 +1,5 @@
 package fr.eni.enienchere.dal.dao;
 
-import fr.eni.enienchere.dal.dao.JdbcImpl.AricleDAOJdbcImpl;
-import fr.eni.enienchere.dal.dao.JdbcImpl.UserDAOJdbcImpl;
-
 /**
  *
  * @author ehourman2019
@@ -11,11 +8,11 @@ import fr.eni.enienchere.dal.dao.JdbcImpl.UserDAOJdbcImpl;
 public class DAOFactory {
 
     public static UserDAO getUserDAO() {
-        return new UserDAOJdbcImpl();
+        return new UserDAO();
     }
 
     public static  ArticleDAO getArticleDAO() {
-        return new AricleDAOJdbcImpl();
+        return new ArticleDAO();
     }
 
 }
