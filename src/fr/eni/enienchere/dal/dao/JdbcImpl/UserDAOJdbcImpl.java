@@ -8,4 +8,5 @@ import fr.eni.enienchere.dal.dao.UserDAO;
  *
  */
 public class UserDAOJdbcImpl implements UserDAO {
+
 }
