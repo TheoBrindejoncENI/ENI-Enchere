@@ -32,7 +32,7 @@ public class User implements Serializable {
     private String email;
 
     @Column(name = "telephone")
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "rue")
     private String street;
@@ -47,8 +47,26 @@ public class User implements Serializable {
     private String password;
 
     @Column(name = "credit")
-    private Long money;
+    private Integer money;
 
     @Column(name = "administrateur")
     private boolean userAdmin;
+
+    public User(String userName, String lastName, String firstName, String email, String phoneNumber, String street,
+                String postalCode, String city, String password, Integer money, boolean userAdmin) {
+        this.userName = userName;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.street = street;
+        this.postalCode = postalCode;
+        this.city = city;
+        this.password = password;
+        this.money = money;
+        this.userAdmin = userAdmin;
+    }
+
+    public User() {
+    }
 }
