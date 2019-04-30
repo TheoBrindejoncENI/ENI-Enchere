@@ -9,6 +9,11 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
+/**
+ *
+ * @author ehourman2019
+ *
+ */
 public class JpaPickUpDAO implements PickUpDAO {
 
     @Override
