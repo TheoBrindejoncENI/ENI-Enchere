@@ -3,6 +3,7 @@ package fr.eni.enienchere.bo;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  *
@@ -11,7 +12,7 @@ import javax.persistence.*;
  */
 @Data
 @Entity(name = "RETRAITS")
-public class PickUp {
+public class PickUp  implements Serializable {
 
     @Column(name = "no_article")
     private Article article;

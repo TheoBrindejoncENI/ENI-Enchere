@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.Columns;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 /**
  *
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "ENCHERES")
-public class Auction {
+public class Auction implements Serializable {
 
     @ManyToOne
     @JoinColumn(name="no_utilisateur")
