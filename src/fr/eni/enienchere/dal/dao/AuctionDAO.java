@@ -1,8 +1,6 @@
 package fr.eni.enienchere.dal.dao;
 
-import fr.eni.enienchere.bo.Article;
 import fr.eni.enienchere.bo.Auction;
-import fr.eni.enienchere.bo.User;
 import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
 import org.hibernate.Session;
@@ -10,6 +8,11 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
+/**
+ *
+ * @author ehourman2019
+ *
+ */
 public class AuctionDAO {
 
     /**
