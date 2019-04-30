@@ -16,5 +16,6 @@
 		<mapping class="fr.eni.enienchere.bo.User"/>
 		<mapping class="fr.eni.enienchere.bo.Category"/>
 		<mapping class="fr.eni.enienchere.bo.Article"/>
+		<mapping class="fr.eni.enienchere.bo.Auction"/>
 	</session-factory>
 </hibernate-configuration>

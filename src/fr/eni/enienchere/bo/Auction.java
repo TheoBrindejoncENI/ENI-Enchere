@@ -12,14 +12,15 @@ import java.time.LocalDate;
  *
  */
 @Data
-@Entity
-@Table(name = "ENCHERES")
+@Entity(name = "ENCHERES")
 public class Auction implements Serializable {
 
+    @Id
     @ManyToOne
     @JoinColumn(name="no_utilisateur")
     private User user;
 
+    @Id
     @ManyToOne
     @JoinColumn(name="no_article")
     private Article article;
@@ -30,4 +31,13 @@ public class Auction implements Serializable {
     @Column(name = "montant_enchere")
     private int price;
 
+    public Auction(User user, Article article, LocalDate date, int price) {
+        this.user = user;
+        this.article = article;
+        this.date = date;
+        this.price = price;
+    }
+
+    public Auction() {
+    }
 }

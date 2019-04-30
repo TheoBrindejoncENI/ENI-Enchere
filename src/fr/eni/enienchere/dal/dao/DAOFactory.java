@@ -18,4 +18,8 @@ public class DAOFactory {
     public static CategoryDAO getCategoryDAO() {
         return  new CategoryDAO();
     }
+
+    public static AuctionDAO getAuctionDAO() {
+        return  new AuctionDAO();
+    }
 }

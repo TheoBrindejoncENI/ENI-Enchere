@@ -1,7 +1,6 @@
 package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.Article;
-import fr.eni.enienchere.bo.User;
 import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
 import org.hibernate.Session;
@@ -35,7 +34,7 @@ public class ArticleDAO {
      */
     public List<Article> selectAll() throws DALException {
         Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM UTILISATEURS");
+        Query q = session.createQuery("FROM ARTICLES_VENDUS");
         List<Article> articles = q.getResultList();
         return articles;
     }
@@ -48,7 +47,7 @@ public class ArticleDAO {
      */
     public List<Article> selectById(Long id) throws DALException {
         Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM UTILISATEURS WHERE idUser=" + id);
+        Query q = session.createQuery("FROM ARTICLES_VENDUS WHERE idArticle=" + id);
         List<Article> articles = q.getResultList();
         return articles;
     }
