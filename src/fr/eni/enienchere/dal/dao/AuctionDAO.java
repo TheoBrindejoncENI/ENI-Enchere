@@ -1,10 +1,7 @@
 package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.Auction;
-import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -13,31 +10,21 @@ import java.util.List;
  * @author ehourman2019
  *
  */
-public class AuctionDAO {
+public interface AuctionDAO {
 
     /**
      * Insert a auction in bdd
      * @param auction
      * @throws DALException
      */
-    public void insert(Auction auction) throws DALException {
-        Session session = ConnectionProvider.session;
-        session.beginTransaction();
-        session.save(auction);
-        session.getTransaction().commit();
-    }
+    void insert(Auction auction) throws DALException;
 
     /**
      * Select all auction in bdd
      * @return
      * @throws DALException
      */
-    public List<Auction> selectAll() throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM UTILISATEURS");
-        List<Auction> auction = q.getResultList();
-        return auction;
-    }
+    List<Auction> selectAll() throws DALException;
 
     /**
      * Select auction with id user
@@ -45,12 +32,7 @@ public class AuctionDAO {
      * @return
      * @throws DALException
      */
-    public List<Auction> selectByIdUser(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM ENCHERES WHERE user.idUser=" + id);
-        List<Auction> auction = q.getResultList();
-        return auction;
-    }
+    List<Auction> selectByIdUser(Long id) throws DALException;
 
     /**
      * Select auction with id Article
@@ -58,34 +40,19 @@ public class AuctionDAO {
      * @return
      * @throws DALException
      */
-    public List<Auction> selectByIdArticle(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM ENCHERES WHERE article.idArticle=" + id);
-        List<Auction> auction = q.getResultList();
-        return auction;
-    }
+    List<Auction> selectByIdArticle(Long id) throws DALException;
 
     /**
      * Update article in bdd
      * @param auction
      * @throws DALException
      */
-    public void update(Auction auction) throws DALException {
-        Session session = ConnectionProvider.session;
-        session.beginTransaction();
-        session.saveOrUpdate(auction);
-        session.getTransaction().commit();
-    }
+    void update(Auction auction) throws DALException;
 
     /**
      * Delete article in bdd
      * @param auction
      * @throws DALException
      */
-    public void delete(Auction auction) throws DALException {
-        Session session = ConnectionProvider.session;
-        session.beginTransaction();
-        session.delete(auction);
-        session.getTransaction().commit();
-    }
+    void delete(Auction auction) throws DALException;
 }
