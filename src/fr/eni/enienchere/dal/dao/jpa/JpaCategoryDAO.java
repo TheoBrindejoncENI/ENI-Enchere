@@ -6,7 +6,6 @@ import fr.eni.enienchere.dal.dao.CategoryDAO;
 import fr.eni.enienchere.dal.exception.DALException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
 import java.util.List;
 
 /**

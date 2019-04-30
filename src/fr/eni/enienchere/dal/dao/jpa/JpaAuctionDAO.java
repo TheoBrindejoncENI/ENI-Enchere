@@ -6,7 +6,6 @@ import fr.eni.enienchere.dal.dao.AuctionDAO;
 import fr.eni.enienchere.dal.exception.DALException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
 import java.util.List;
 
 /**
@@ -15,7 +14,6 @@ import java.util.List;
  *
  */
 public class JpaAuctionDAO implements AuctionDAO {
-
 
     @Override
     public void insert(Auction auction) throws DALException {

@@ -6,7 +6,6 @@ import fr.eni.enienchere.dal.dao.ArticleDAO;
 import fr.eni.enienchere.dal.exception.DALException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
 import java.util.List;
 
 /**
@@ -15,7 +14,6 @@ import java.util.List;
  *
  */
 public class JpaArticleDAO implements ArticleDAO {
-
 
     @Override
     public void insert(Article article) throws DALException {

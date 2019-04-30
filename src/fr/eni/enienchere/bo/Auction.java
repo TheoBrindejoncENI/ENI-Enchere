@@ -1,11 +1,10 @@
 package fr.eni.enienchere.bo;
 
 import lombok.Data;
-import org.hibernate.annotations.Columns;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+
 /**
  *
  * @author ehourman2019

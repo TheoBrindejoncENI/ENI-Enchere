@@ -1,7 +1,6 @@
 package fr.eni.enienchere.bo;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -28,4 +27,13 @@ public class PickUp  implements Serializable {
     @Column(name = "ville")
     private String city;
 
+    public PickUp(Article article, String street, String postalCode, String city) {
+        this.article = article;
+        this.street = street;
+        this.postalCode = postalCode;
+        this.city = city;
+    }
+
+    public PickUp() {
+    }
 }

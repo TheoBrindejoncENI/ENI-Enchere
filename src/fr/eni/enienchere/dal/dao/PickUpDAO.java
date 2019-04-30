@@ -2,7 +2,6 @@ package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.PickUp;
 import fr.eni.enienchere.dal.exception.DALException;
-
 import java.util.List;
 
 /**

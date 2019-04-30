@@ -1,7 +1,6 @@
 package fr.eni.enienchere.bo;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
