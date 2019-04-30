@@ -1,10 +1,7 @@
 package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.Category;
-import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -13,31 +10,21 @@ import java.util.List;
  * @author ehourman2019
  *
  */
-public class CategoryDAO {
+public interface CategoryDAO {
 
     /**
      * Insert a category in bdd
      * @param category
      * @throws DALException
      */
-    public void insert(Category category) throws DALException {
-        Session session = ConnectionProvider.session;
-        session.beginTransaction();
-        session.save(category);
-        session.getTransaction().commit();
-    }
+    void insert(Category category) throws DALException;
 
     /**
      * Select all category in bdd
      * @return
      * @throws DALException
      */
-    public List<Category> selectAll() throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM CATEGORIES");
-        List<Category> categories = q.getResultList();
-        return categories;
-    }
+    List<Category> selectAll() throws DALException;
 
     /**
      * Select category with id
@@ -45,36 +32,19 @@ public class CategoryDAO {
      * @return
      * @throws DALException
      */
-    public List<Category> selectById(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM CATEGORIES WHERE idCategory=" + id);
-        List<Category> categories = q.getResultList();
-        return categories;
-    }
+    List<Category> selectById(Long id) throws DALException;
 
     /**
      * Update category in bdd
      * @param id
      * @throws DALException
      */
-    public void update(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Category category = (Category) session.get(Category.class, id);
-        session.beginTransaction();
-        session.saveOrUpdate(category);
-        session.getTransaction().commit();
-    }
+    void update(Long id) throws DALException;
 
     /**
      * Delete category in bdd
      * @param id
      * @throws DALException
      */
-    public void delete(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Category category = (Category) session.get(Category.class, id);
-        session.beginTransaction();
-        session.delete(category);
-        session.getTransaction().commit();
-    }
+    void delete(Long id) throws DALException;
 }
