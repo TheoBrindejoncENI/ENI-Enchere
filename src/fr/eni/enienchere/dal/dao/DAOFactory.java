@@ -3,6 +3,7 @@ package fr.eni.enienchere.dal.dao;
 import fr.eni.enienchere.dal.dao.jpa.JpaArticleDAO;
 import fr.eni.enienchere.dal.dao.jpa.JpaAuctionDAO;
 import fr.eni.enienchere.dal.dao.jpa.JpaCategoryDAO;
+import fr.eni.enienchere.dal.dao.jpa.JpaPickUpDAO;
 
 /**
  *
@@ -21,5 +22,5 @@ public class DAOFactory {
 
     public static AuctionDAO getAuctionDAO() { return new JpaAuctionDAO(); }
 
-    public static PickUpDAO getPickUpDAO() { return new PickUpDAO(); }
+    public static PickUpDAO getPickUpDAO() { return new JpaPickUpDAO(); }
 }
