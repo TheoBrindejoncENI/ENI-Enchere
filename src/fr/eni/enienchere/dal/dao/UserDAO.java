@@ -20,7 +20,7 @@ public class UserDAO {
      * @param user
      * @throws DALException
      */
-    void insert(User user) throws DALException {
+  public void insert(User user) throws DALException {
         Session session = ConnectionProvider.session;
         session.beginTransaction();
         session.save(user);
@@ -32,9 +32,9 @@ public class UserDAO {
      * @return
      * @throws DALException
      */
-    List<User> selectAll() throws DALException {
+    public List<User> selectAll() throws DALException {
         Session session = ConnectionProvider.session;
-        Query q = session.createQuery("SELECT * FROM UTILISATEURS");
+        Query q = session.createQuery("FROM UTILISATEURS");
         List<User> users = q.getResultList();
        return users;
     }
@@ -45,9 +45,9 @@ public class UserDAO {
      * @return
      * @throws DALException
      */
-    List<User> selectById(int id) throws DALException {
+    public List<User> selectById(Long id) throws DALException {
         Session session = ConnectionProvider.session;
-        Query q = session.createQuery("SELECT * FROM UTILISATEURS WHERE no_utilisateur = " + id);
+        Query q = session.createQuery("FROM UTILISATEURS WHERE idUser=" + id);
         List<User> users = q.getResultList();
         return users;
     }
@@ -57,7 +57,7 @@ public class UserDAO {
      * @param id
      * @throws DALException
      */
-    void update(int id) throws DALException {
+    public void update(Long id) throws DALException {
         Session session = ConnectionProvider.session;
         User user = (User) session.get(User.class, id);
         session.beginTransaction();
@@ -70,7 +70,7 @@ public class UserDAO {
      * @param id
      * @throws DALException
      */
-    void delete(int id) throws DALException {
+    public void delete(Long id) throws DALException {
         Session session = ConnectionProvider.session;
         User user = (User) session.get(User.class, id);
         session.beginTransaction();
