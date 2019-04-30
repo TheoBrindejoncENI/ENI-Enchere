@@ -3,6 +3,7 @@ package fr.eni.enienchere.bo;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  *
@@ -11,7 +12,7 @@ import javax.persistence.*;
  */
 @Data
 @Entity(name = "CATEGORIES")
-public class Category {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +22,10 @@ public class Category {
     @Column(name = "libelle")
     private String title;
 
+    public Category(String title) {
+        this.title = title;
+    }
+
+    public Category() {
+    }
 }
