@@ -1,5 +1,7 @@
 package fr.eni.enienchere.dal.dao;
 
+import fr.eni.enienchere.dal.dao.jpa.JpaArticleDAO;
+
 /**
  *
  * @author ehourman2019
@@ -12,7 +14,7 @@ public class DAOFactory {
     }
 
     public static  ArticleDAO getArticleDAO() {
-        return new ArticleDAO();
+        return new JpaArticleDAO();
     }
 
     public static CategoryDAO getCategoryDAO() {

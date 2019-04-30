@@ -1,10 +1,7 @@
 package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.Article;
-import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -13,31 +10,21 @@ import java.util.List;
  * @author ehourman2019
  *
  */
-public class ArticleDAO {
+public interface ArticleDAO {
 
     /**
      * Insert a article in bdd
      * @param article
      * @throws DALException
      */
-    public void insert(Article article) throws DALException {
-        Session session = ConnectionProvider.session;
-        session.beginTransaction();
-        session.save(article);
-        session.getTransaction().commit();
-    }
+    void insert(Article article) throws DALException;
 
     /**
      * Select all article in bdd
      * @return
      * @throws DALException
      */
-    public List<Article> selectAll() throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM ARTICLES_VENDUS");
-        List<Article> articles = q.getResultList();
-        return articles;
-    }
+    List<Article> selectAll() throws DALException;
 
     /**
      * Select article with id
@@ -45,36 +32,19 @@ public class ArticleDAO {
      * @return
      * @throws DALException
      */
-    public List<Article> selectById(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM ARTICLES_VENDUS WHERE idArticle=" + id);
-        List<Article> articles = q.getResultList();
-        return articles;
-    }
+    List<Article> selectById(Long id) throws DALException;
 
     /**
      * Update article in bdd
      * @param id
      * @throws DALException
      */
-    public void update(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Article article = (Article) session.get(Article.class, id);
-        session.beginTransaction();
-        session.saveOrUpdate(article);
-        session.getTransaction().commit();
-    }
+    void update(Long id) throws DALException;
 
     /**
      * Delete article in bdd
      * @param id
      * @throws DALException
      */
-    public void delete(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Article article = (Article) session.get(Article.class, id);
-        session.beginTransaction();
-        session.delete(article);
-        session.getTransaction().commit();
-    }
+    void delete(Long id) throws DALException;
 }
