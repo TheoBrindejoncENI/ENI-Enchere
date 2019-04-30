@@ -1,10 +1,7 @@
 package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.User;
-import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -13,31 +10,21 @@ import java.util.List;
  * @author ehourman2019
  *
  */
-public class UserDAO {
+public interface UserDAO {
 
     /**
      * Insert a user in bdd
      * @param user
      * @throws DALException
      */
-  public void insert(User user) throws DALException {
-        Session session = ConnectionProvider.session;
-        session.beginTransaction();
-        session.save(user);
-        session.getTransaction().commit();
-    }
+    void insert(User user) throws DALException;
 
     /**
      * Select all user in bdd
      * @return
      * @throws DALException
      */
-    public List<User> selectAll() throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM UTILISATEURS");
-        List<User> users = q.getResultList();
-       return users;
-    }
+    List<User> selectAll() throws DALException;
 
     /**
      * Select user with id
@@ -45,36 +32,19 @@ public class UserDAO {
      * @return
      * @throws DALException
      */
-    public List<User> selectById(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM UTILISATEURS WHERE idUser=" + id);
-        List<User> users = q.getResultList();
-        return users;
-    }
+    List<User> selectById(Long id) throws DALException;
 
     /**
      * Update user in bdd
      * @param id
      * @throws DALException
      */
-    public void update(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        User user = (User) session.get(User.class, id);
-        session.beginTransaction();
-        session.saveOrUpdate(user);
-        session.getTransaction().commit();
-    }
+    void update(Long id) throws DALException;
 
     /**
      * Delete user in bdd
      * @param id
      * @throws DALException
      */
-    public void delete(Long id) throws DALException {
-        Session session = ConnectionProvider.session;
-        User user = (User) session.get(User.class, id);
-        session.beginTransaction();
-        session.delete(user);
-        session.getTransaction().commit();
-    }
+    void delete(Long id) throws DALException;
 }

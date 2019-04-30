@@ -1,9 +1,6 @@
 package fr.eni.enienchere.dal.dao;
 
-import fr.eni.enienchere.dal.dao.jpa.JpaArticleDAO;
-import fr.eni.enienchere.dal.dao.jpa.JpaAuctionDAO;
-import fr.eni.enienchere.dal.dao.jpa.JpaCategoryDAO;
-import fr.eni.enienchere.dal.dao.jpa.JpaPickUpDAO;
+import fr.eni.enienchere.dal.dao.jpa.*;
 
 /**
  *
@@ -12,7 +9,7 @@ import fr.eni.enienchere.dal.dao.jpa.JpaPickUpDAO;
  */
 public class DAOFactory {
 
-    public static UserDAO getUserDAO() { return new UserDAO(); }
+    public static UserDAO getUserDAO() { return new JpaUserDAO(); }
 
     public static  ArticleDAO getArticleDAO() { return new JpaArticleDAO(); }
 
