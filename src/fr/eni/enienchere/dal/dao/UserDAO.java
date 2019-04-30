@@ -77,5 +77,4 @@ public class UserDAO {
         session.delete(user);
         session.getTransaction().commit();
     }
-
 }

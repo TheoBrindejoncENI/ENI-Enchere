@@ -14,5 +14,6 @@
 		<property name="hibernate.connection.pool_size">10</property>
 		<property name="hibernate.connection.autocommit">false</property>
 		<mapping class="fr.eni.enienchere.bo.User"/>
+		<mapping class="fr.eni.enienchere.bo.Category"/>
 	</session-factory>
 </hibernate-configuration>
