@@ -37,5 +37,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.23" level="application_server_libraries" />
     <orderEntry type="library" name="Hibernate 5.4.2-5.4.2" level="project" />
+    <orderEntry type="library" name="semantic" level="application" />
   </component>
 </module>
