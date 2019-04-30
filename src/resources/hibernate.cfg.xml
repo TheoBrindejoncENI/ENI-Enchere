@@ -15,5 +15,6 @@
 		<property name="hibernate.connection.autocommit">false</property>
 		<mapping class="fr.eni.enienchere.bo.User"/>
 		<mapping class="fr.eni.enienchere.bo.Category"/>
+		<mapping class="fr.eni.enienchere.bo.Article"/>
 	</session-factory>
 </hibernate-configuration>

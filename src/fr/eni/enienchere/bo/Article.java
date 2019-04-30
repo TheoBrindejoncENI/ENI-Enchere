@@ -3,6 +3,7 @@ package fr.eni.enienchere.bo;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 /**
  *
@@ -11,7 +12,7 @@ import java.time.LocalDate;
  */
 @Data
 @Entity(name = "ARTICLES_VENDUS")
-public class Article {
+public class Article implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,16 +37,25 @@ public class Article {
     @Column(name = "prix_vente")
     private int sellPrice;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="UTILISATEURS",
-            joinColumns={@JoinColumn(name="no_utilisateur")},
-            inverseJoinColumns={@JoinColumn(name="no_utilisateur")})
+    @ManyToOne
+    @JoinColumn(name = "no_utilisateur")
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="CATEGORIES",
-            joinColumns={@JoinColumn(name="no_categorie")},
-            inverseJoinColumns={@JoinColumn(name="no_categorie")})
+    @ManyToOne
+    @JoinColumn(name = "no_categorie")
     private Category category;
 
+    public Article(String name, String description, LocalDate auctionStartDate, LocalDate auctionEndDate, int initPrice, int sellPrice, User user, Category category) {
+        this.name = name;
+        this.description = description;
+        this.auctionStartDate = auctionStartDate;
+        this.auctionEndDate = auctionEndDate;
+        this.initPrice = initPrice;
+        this.sellPrice = sellPrice;
+        this.user = user;
+        this.category = category;
+    }
+
+    public Article() {
+    }
 }
