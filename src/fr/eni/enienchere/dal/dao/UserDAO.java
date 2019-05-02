@@ -37,6 +37,12 @@ public interface UserDAO {
      */
     List<User> selectById(Long id) throws DALException;
 
+    /**
+     * Select a user with useName
+     * @param username
+     * @return
+     * @throws DALException
+     */
     List<User> selectByUserName(String username) throws DALException;
 
 
