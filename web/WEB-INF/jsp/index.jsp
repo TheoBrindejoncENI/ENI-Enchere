@@ -1,27 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>ENI Enchere - Accueil</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-<%@include file="WEB-INF/jsp/header.jsp"%>
+<jsp:include page="header.jsp"/>
 <!-- Page Content -->
 <div class="container">
 
@@ -177,13 +154,4 @@
 
 </div>
 <!-- /.container -->
-
-<%@include file="WEB-INF/jsp/footer.jsp"%>
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
+<jsp:include page="footer.jsp"/>
