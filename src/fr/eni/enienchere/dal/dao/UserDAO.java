@@ -33,6 +33,14 @@ public interface UserDAO {
      */
     List<User> selectById(Long id) throws DALException;
 
+    public List<User> selectByUserName(String username) throws DALException {
+        Session session = ConnectionProvider.session;
+        Query q = session.createQuery("FROM UTILISATEURS WHERE userName=" + username);
+        List<User> users = q.getResultList();
+        return users;
+    }
+
+
     /**
      * Update user in bdd
      * @param id
