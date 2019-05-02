@@ -40,7 +40,7 @@ public class RegisterManager {
             checkUser(user);
             userDAO.insert(user);
         } catch (DALException e) {
-            e.printStackTrace();
+           e.printStackTrace();
         }
     }
 
