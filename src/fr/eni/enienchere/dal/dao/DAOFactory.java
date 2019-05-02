@@ -9,7 +9,8 @@ import fr.eni.enienchere.dal.dao.jpa.*;
  */
 public class DAOFactory {
 
-    public static UserDAO getUserDAO() { return new JpaUserDAO(); }
+    //
+    // public static UserDAO getUserDAO() { return new JpaUserDAO(); }
 
     public static  ArticleDAO getArticleDAO() { return new JpaArticleDAO(); }
 

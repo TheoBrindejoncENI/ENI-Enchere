@@ -1,7 +1,11 @@
 package fr.eni.enienchere.dal.dao;
 
 import fr.eni.enienchere.bo.User;
+import fr.eni.enienchere.dal.ConnectionProvider;
 import fr.eni.enienchere.dal.exception.DALException;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
+
 import java.util.List;
 
 /**
@@ -33,12 +37,7 @@ public interface UserDAO {
      */
     List<User> selectById(Long id) throws DALException;
 
-    public List<User> selectByUserName(String username) throws DALException {
-        Session session = ConnectionProvider.session;
-        Query q = session.createQuery("FROM UTILISATEURS WHERE userName=" + username);
-        List<User> users = q.getResultList();
-        return users;
-    }
+    List<User> selectByUserName(String username) throws DALException;
 
 
     /**

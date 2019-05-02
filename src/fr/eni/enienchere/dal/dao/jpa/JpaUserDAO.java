@@ -13,7 +13,7 @@ import java.util.List;
  * @author ehourman2019
  *
  */
-public class JpaUserDAO implements UserDAO {
+abstract class JpaUserDAO implements UserDAO {
 
     @Override
     public void insert(User user) throws DALException {
@@ -46,6 +46,12 @@ public class JpaUserDAO implements UserDAO {
         session.beginTransaction();
         session.saveOrUpdate(user);
         session.getTransaction().commit();
+    }
+    public List<User> selectbyUserName(String username) throws DALException{
+        Session session = ConnectionProvider.session;
+        Query q = session.createQuery("FROM UTILISATEURS WHERE userName=" + username);
+        List<User> users = q.getResultList();
+        return users;
     }
 
     @Override
